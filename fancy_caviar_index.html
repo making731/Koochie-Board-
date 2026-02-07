@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gouda & Caviar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+  /* Background Gradient + Animated */
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Playfair Display", serif;
+    color: #2b2b2b;
+    overflow: hidden;
+    background: linear-gradient(120deg, #fdf6e3, #fde7d6, #f9f0e3);
+    background-size: 600% 600%;
+    animation: gradientShift 30s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  .card {
+    text-align: center;
+    max-width: 900px;
+    padding: 50px;
+    position: relative;
+  }
+
+  /* Sparkle / bubble pseudo-elements */
+  .sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 215, 0, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp 6s infinite;
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(0px) scale(0.5); opacity:0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-300px) scale(1); opacity:0; }
+  }
+
+  /* Title */
+  h1 {
+    font-size: 4rem;
+    color: #b8860b;
+    opacity: 0;
+    animation: fadeInUp 2s forwards;
+    animation-delay: 0.5s;
+  }
+
+  /* Flavor lines */
+  .line {
+    font-size: 2rem;
+    margin-top: 25px;
+    opacity: 0;
+    display: inline-block;
+  }
+
+  .line:nth-child(2) { animation: fadeInUp 2s forwards 2s; }
+  .line:nth-child(3) { animation: fadeInUp 2s forwards 4s; }
+  .line:nth-child(4) { animation: fadeInUp 2s forwards 6s; }
+
+  /* Quote */
+  .quote {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-top: 50px;
+    color: #a0522d;
+    opacity: 0;
+    animation: fadeInUp 2s forwards 8s;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+</style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Gouda & Caviar</h1>
+
+    <div class="line">Creamy richness</div>
+    <div class="line">Saline pop</div>
+    <div class="line">Umami depth</div>
+
+    <div class="quote">“Salt sharpens sweetness.”</div>
+
+    <!-- Sparkles -->
+    <div class="sparkle" style="left:10%; animation-delay:0s;"></div>
+    <div class="sparkle" style="left:25%; animation-delay:1s;"></div>
+    <div class="sparkle" style="left:40%; animation-delay:2s;"></div>
+    <div class="sparkle" style="left:55%; animation-delay:3s;"></div>
+    <div class="sparkle" style="left:70%; animation-delay:1.5s;"></div>
+    <div class="sparkle" style="left:85%; animation-delay:2.5s;"></div>
+  </div>
+</body>
+</html>
